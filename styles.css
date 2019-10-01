@@ -1,0 +1,51 @@
+div#r1, div#r2{
+  display: inline-block;
+  width: 25vw;
+  height: 10vw;
+}
+
+div#answer-submit{
+  margin-top: 1%;
+}
+
+div#r1-label{
+  text-align: center;
+  font-size: 1.5em;
+}
+
+div#r1-start, div#r1-end{
+  width: 45%;
+}
+
+input#first-number{
+  height: 4vh;
+  width: 13vw;
+  font-size: 1.8em;
+  position: relative;
+  top: .43vh;
+  margin-right: 10%;
+}
+
+section#score{
+  position: absolute;
+  top: 0;
+  right: 10vw;
+  display: block;
+  font-size: 2em;
+  width: 15vw;
+}
+
+section#second input, div#r2 > input {
+  width: 48%;
+}
+
+section#math{
+  width: 35vw;
+}
+
+section#math button{
+  width: 40vw;
+  height: 10vh;
+  margin: 1%;
+  font-size: 4em
+}
