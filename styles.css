@@ -1,26 +1,40 @@
+html{
+	font-family: sans-serif;
+}
 div#r1, div#r2{
   display: inline-block;
   width: 25vw;
-  height: 10vw;
+  height: 10vh;
 }
 
 div#answer-submit{
   margin-top: 1%;
 }
+input#answer{
+  width: 25vw;
+  font-size: 1.3em;
+}
 
-div#r1-label{
+#submit{
+	margin-left: 18%;
+	width: 10vw;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+div#r1-label,div#r2-label{
   text-align: center;
   font-size: 1.5em;
 }
 
-div#r1-start, div#r1-end{
+div#r1-start, div#r1-end,div#r2-end, div#r2-end{
   width: 45%;
 }
 
-input#first-number{
+input#first-number, input#last-number{
   height: 4vh;
-  width: 13vw;
-  font-size: 1.8em;
+  width: 25vw;
+  font-size: 1.3em;
   position: relative;
   top: .43vh;
   margin-right: 10%;
@@ -35,7 +49,7 @@ section#score{
   width: 15vw;
 }
 
-section#second input, div#r2 > input {
+input, div#r2 > input {
   width: 48%;
 }
 
