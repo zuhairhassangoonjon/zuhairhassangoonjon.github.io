@@ -4,25 +4,21 @@ let mode = 'none';
 let addButton = document.getElementById('addition');
 addButton.addEventListener('click', (event) => {
   mode = 'add';
-  console.log(mode);
 });
 
 let subtractButton = document.getElementById('subtraction');
 subtractButton.addEventListener('click', (event) => {
   mode = 'subtract';
-  console.log(mode);
 });
 
 let multButton = document.getElementById('multiplication');
 multButton.addEventListener('click', (event) => {
-  mode = 'mulitply';
-  console.log(mode);
+  mode = 'multiply';
 });
 
 let divideButton = document.getElementById('division');
 divideButton.addEventListener('click', (event) => {
   mode = 'division';
-  console.log(mode);
 });
 
 const r1Button = document.getElementById('r1-submit');
@@ -61,6 +57,43 @@ r2Button.addEventListener('click', (event) => {
       }
     }
   });
+
+let totalAttempted = 0;
+let totalCorrect = 0;
+let attemptedElement = document.getElementById('total');
+let correctElement = document.getElementById('correct');
+attemptedElement.innerText += ` ${totalAttempted}`
+correctElement.innerText += ` ${totalCorrect}`;
+
+let submit = document.getElementById('submit');
+submit.addEventListener('click', (event) => {
+  let input = parseInt(document.getElementById('answer').value, 10);
+  let firstNumber = parseInt(document.getElementById('first-number').value, 10);
+  let secondNumber = parseInt(document.getElementById('last-number').value, 10);
+  if(mode == 'add'){
+    if(input == firstNumber + secondNumber){
+      totalCorrect += 1;
+    }
+  }
+  if(mode == 'subtract'){
+    if(input == firstNumber - secondNumber){
+      totalCorrect += 1;
+    }
+  }
+  if(mode == 'multiply'){
+    if(input == firstNumber * secondNumber){
+      totalCorrect += 1;
+    }
+  }
+  if(mode == 'division'){
+    if(input == firstNumber / secondNumber){
+      totalCorrect += 1;
+    }
+  }
+  totalAttempted += 1;
+  attemptedElement.innerText = `Total Attempted: ${totalAttempted}`;
+  correctElement.innerText = `Total Correct: ${totalCorrect}`;
+});
 
 function is_prime(n)
 {
