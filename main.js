@@ -4,21 +4,37 @@ let mode = 'none';
 let addButton = document.getElementById('addition');
 addButton.addEventListener('click', (event) => {
   mode = 'add';
+  addButton.style.color = "lightgreen";
+  subtractButton.style.color = "black";
+  multButton.style.color = "black";
+  divideButton.style.color = "black";
 });
 
 let subtractButton = document.getElementById('subtraction');
 subtractButton.addEventListener('click', (event) => {
   mode = 'subtract';
+  addButton.style.color = "black";
+  subtractButton.style.color = "lightgreen";
+  multButton.style.color = "black";
+  divideButton.style.color = "black";
 });
 
 let multButton = document.getElementById('multiplication');
 multButton.addEventListener('click', (event) => {
   mode = 'multiply';
+  addButton.style.color = "black";
+  subtractButton.style.color = "black";
+  multButton.style.color = "lightgreen";
+  divideButton.style.color = "black";
 });
 
 let divideButton = document.getElementById('division');
 divideButton.addEventListener('click', (event) => {
   mode = 'division';
+  addButton.style.color = "black";
+  subtractButton.style.color = "black";
+  multButton.style.color = "black";
+  divideButton.style.color = "lightgreen";
 });
 
 let rangeButton = document.getElementById('set-ranges');
