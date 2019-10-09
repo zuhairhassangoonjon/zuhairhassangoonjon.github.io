@@ -63,3 +63,7 @@ section#math button{
   margin: 1%;
   font-size: 4em
 }
+
+input#r1-start, input#r1-end, input#r2-start, input#r2-end{
+  font-size: 2em;
+}
