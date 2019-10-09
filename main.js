@@ -39,42 +39,6 @@ divideButton.addEventListener('click', (event) => {
 
 let rangeButton = document.getElementById('set-ranges');
 rangeButton.addEventListener('click', createRandNums);
-//const r1Button = document.getElementById('r1-submit');
-//r1Button.addEventListener('click', (event) => {
-//  let first = r1Button.previousElementSibling.previousElementSibling.value;
-//  let second = r1Button.previousElementSibling.value;
-//  let newVal = Math.ceil(Math.random() * (second - first) + first);
-//  let destination = r1Button.parentElement.previousElementSibling;
-//  destination.value = newVal;
-//  if(mode == 'division'){
-//    while(is_prime(destination.value) == true){
-//      destination.value = Math.ceil(Math.random() * (second - first) + first); 
-//    }
-//  }
-//});
-
-//const r2Button = document.getElementById('r2-submit');
-//r2Button.addEventListener('click', (event) => {
-//  let first = r2Button.previousElementSibling.previousElementSibling.value;
-//  let second = r2Button.previousElementSibling.value;
-//  let newVal = Math.ceil(Math.random() * (second - first) + first);
-//  let destination = r2Button.parentElement.previousElementSibling;
-//  destination.value = newVal;
-//  let rand1 = document.getElementById("first-number").value;
-//  if(rand1 != ""){
-//    if(mode == 'subtract'){
-//      while(rand1 < newVal){
-//        newVal = Math.ceil(Math.random() * (second - first) + first);
-//        destination.value = newVal;
-//      }
-//    }
-//    if(mode == 'division'){
-//      while(rand1 % destination.value != 0){
-//        destination.value = Math.ceil(Math.random() * (second - first) + first); 
-//        }
-//      }
-//    }
-//  });
 
 function createRandNums(){
   //code for first randNum
