@@ -21,42 +21,78 @@ divideButton.addEventListener('click', (event) => {
   mode = 'division';
 });
 
-const r1Button = document.getElementById('r1-submit');
-r1Button.addEventListener('click', (event) => {
-  let first = r1Button.previousElementSibling.previousElementSibling.value;
-  let second = r1Button.previousElementSibling.value;
-  let newVal = Math.floor(Math.random() * (second - first) + first);
-  let destination = r1Button.parentElement.previousElementSibling;
-  destination.value = newVal;
+let rangeButton = document.getElementById('set-ranges');
+rangeButton.addEventListener('click', createRandNums);
+//const r1Button = document.getElementById('r1-submit');
+//r1Button.addEventListener('click', (event) => {
+//  let first = r1Button.previousElementSibling.previousElementSibling.value;
+//  let second = r1Button.previousElementSibling.value;
+//  let newVal = Math.ceil(Math.random() * (second - first) + first);
+//  let destination = r1Button.parentElement.previousElementSibling;
+//  destination.value = newVal;
+//  if(mode == 'division'){
+//    while(is_prime(destination.value) == true){
+//      destination.value = Math.ceil(Math.random() * (second - first) + first); 
+//    }
+//  }
+//});
+
+//const r2Button = document.getElementById('r2-submit');
+//r2Button.addEventListener('click', (event) => {
+//  let first = r2Button.previousElementSibling.previousElementSibling.value;
+//  let second = r2Button.previousElementSibling.value;
+//  let newVal = Math.ceil(Math.random() * (second - first) + first);
+//  let destination = r2Button.parentElement.previousElementSibling;
+//  destination.value = newVal;
+//  let rand1 = document.getElementById("first-number").value;
+//  if(rand1 != ""){
+//    if(mode == 'subtract'){
+//      while(rand1 < newVal){
+//        newVal = Math.ceil(Math.random() * (second - first) + first);
+//        destination.value = newVal;
+//      }
+//    }
+//    if(mode == 'division'){
+//      while(rand1 % destination.value != 0){
+//        destination.value = Math.ceil(Math.random() * (second - first) + first); 
+//        }
+//      }
+//    }
+//  });
+
+function createRandNums(){
+  //code for first randNum
+  let r1First = document.getElementById("r1-start").value;
+  let r1Second = document.getElementById("r1-end").value;
+  let r1newVal = Math.ceil(Math.random() * (r1Second - r1First) + r1First);
+  let r1destination = document.getElementById("first-number");
+  r1destination.value = r1newVal;
   if(mode == 'division'){
-    while(is_prime(destination.value) == true){
-      destination.value = Math.floor(Math.random() * (second - first) + first); 
+    while(is_prime(r1destination.value) == true){
+      r1destination.value = Math.ceil(Math.random() * (r1Second - r1First) + r1First); 
     }
   }
-});
-
-const r2Button = document.getElementById('r2-submit');
-r2Button.addEventListener('click', (event) => {
-  let first = r2Button.previousElementSibling.previousElementSibling.value;
-  let second = r2Button.previousElementSibling.value;
-  let newVal = Math.floor(Math.random() * (second - first) + first);
-  let destination = r2Button.parentElement.previousElementSibling;
+  //code for second randNum  
+  let first = document.getElementById("r2-start").value;
+  let second = document.getElementById("r2-end").value;
+  let newVal = Math.ceil(Math.random() * (second - first) + first);
+  let destination = document.getElementById("last-number");
   destination.value = newVal;
   let rand1 = document.getElementById("first-number").value;
   if(rand1 != ""){
     if(mode == 'subtract'){
       while(rand1 < newVal){
-        newVal = Math.floor(Math.random() * (second - first) + first);
+        newVal = Math.ceil(Math.random() * (second - first) + first);
         destination.value = newVal;
       }
     }
     if(mode == 'division'){
       while(rand1 % destination.value != 0){
-        destination.value = Math.floor(Math.random() * (second - first) + first); 
+        destination.value = Math.ceil(Math.random() * (second - first) + first); 
         }
       }
     }
-  });
+}
 
 let totalAttempted = 0;
 let totalCorrect = 0;
@@ -93,6 +129,9 @@ submit.addEventListener('click', (event) => {
   totalAttempted += 1;
   attemptedElement.innerText = `Total Attempted: ${totalAttempted}`;
   correctElement.innerText = `Total Correct: ${totalCorrect}`;
+  createRandNums();
+  let submit = document.getElementById('answer');
+  submit.value = '';
 });
 
 function is_prime(n)
@@ -112,17 +151,3 @@ function is_prime(n)
     return true;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
