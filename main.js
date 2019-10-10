@@ -114,6 +114,41 @@ submit.addEventListener('click', (event) => {
   submit.value = '';
 });
 
+let answer = document.getElementById('answer');
+answer.addEventListener('keyup', (event) => {
+  if (event.which == 13 || event.keyCode == 13){
+    let input = parseInt(document.getElementById('answer').value, 10);
+    let firstNumber = parseInt(document.getElementById('first-number').value, 10);
+    let secondNumber = parseInt(document.getElementById('last-number').value, 10);
+    if(mode == 'add'){
+      if(input == firstNumber + secondNumber){
+        totalCorrect += 1;
+      }
+    }
+    if(mode == 'subtract'){
+      if(input == firstNumber - secondNumber){
+        totalCorrect += 1;
+      }
+    }
+    if(mode == 'multiply'){
+      if(input == firstNumber * secondNumber){
+        totalCorrect += 1;
+      }
+    }
+    if(mode == 'division'){
+      if(input == firstNumber / secondNumber){
+        totalCorrect += 1;
+      }
+    }
+    totalAttempted += 1;
+    attemptedElement.innerText = `Total Attempted: ${totalAttempted}`;
+    correctElement.innerText = `Total Correct: ${totalCorrect}`;
+    createRandNums();
+    let submit = document.getElementById('answer');
+    submit.value = '';
+  }
+});
+
 function is_prime(n)
 {
   if(n===1){
