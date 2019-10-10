@@ -67,3 +67,7 @@ section#math button{
 input#r1-start, input#r1-end, input#r2-start, input#r2-end{
   font-size: 2em;
 }
+button#set-ranges {
+  height: 3vh;
+  font-size: 1.5em;
+}
